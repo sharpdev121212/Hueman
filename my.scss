@@ -24,7 +24,17 @@ a{
 }
 
 .muted{
-   color:rgba(0,0,0,0.5);}
+   color:rgba(0,0,0,0.5);
+}
+
+img{
+   filter:brightness(0.7);
+   transition: filter 0.7s;
+
+   &:hover{
+      filter:brightness(1);
+   }
+}
 
 nav {
 
@@ -182,6 +192,7 @@ section.mainsection{
    .container{
       background-color: lighten(rgba(230,230,230,1),0%);
       display: flex;
+
    }
 
    .discover{
@@ -264,6 +275,9 @@ section.mainsection{
             width:47%;
 
 
+         }
+         &.last{
+            border-bottom: 10px solid transparent;
          }
       }
    }
@@ -357,6 +371,7 @@ section.mainsection{
 footer{
    background-color: #33363b;
    padding:35px;
+   margin-top: 50px;
 
    .container{
       display: flex;
@@ -386,5 +401,13 @@ footer{
    img{
       width:170px;
       margin-bottom: 15px;
+      filter:unset;
    }
 }
+
+//Utilities
+
+
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }

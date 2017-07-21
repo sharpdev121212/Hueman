@@ -24,18 +24,18 @@ rsz();
 
 function rsz(){
    const windowWidth = $(window).width();
-   if(windowWidth<1000){
-      $(".blog,.bottomheader>:nth-child(2)").css('width','70%');
+   if(windowWidth<1100){
+      $(".blog,.bottomheader>:nth-child(2)").css('width','66%');
       $('.multiselect,.bottomheader>:nth-child(3)').addClass("none");
-      $('.discover,.bottomheader>:nth-child(1)').removeClass('none').css('width',"30%");
+      $('.discover,.bottomheader>:nth-child(1)').removeClass('none').css('width',"34%");
 
    }
    if(windowWidth<850){
       $(".blog,.bottomheader>:nth-child(2)").css('width','100%');
-      $('.discover,.bottomheader>:nth-child(1)').addClass('none');
+      $('.discover,.bottomheader>:nth-child(1), footer').addClass('none');
       return;
    }
-   if(windowWidth>1000){
+   if(windowWidth>1100){
       $(".blog,.bottomheader>:nth-child(2)").css('width','60%');
       $('.discover,.bottomheader>:nth-child(1)').css('width',"23%");
       $('.none').removeClass('none');

@@ -11,6 +11,7 @@ html {
 body{
    background-color: #f1f1f1;
    user-select: none;
+   overflow-x: hidden;
 }
 .container{
    max-width: 1400px;
@@ -62,8 +63,18 @@ img{
 }
 
 .none{
+   //display: none !important;
+   width: 0 !important;
+   padding:0 !important;
+   visibility: hidden;
+   //transform: scaleX(0);
+}
+
+.none ul, .none i{
    display: none !important;
 }
+
+
 
 
 nav {
@@ -154,6 +165,7 @@ header{
       padding-top: 60px;
       padding-bottom: 60px;
 
+
       h1{
          text-transform: capitalize;
          color:white;
@@ -181,6 +193,8 @@ header{
          justify-content: space-between;
          color:rgba(250,250,250,0.8);
          font-weight: bold;
+         transition: all 1s;
+
 
          ul{
             display: flex;
@@ -200,6 +214,7 @@ header{
          font-size: 95%;
          border-bottom: 1px solid #eee;
          border-top: 1px solid transparent;
+         transition: width 1s;
 
          span{
             color:#aaa;
@@ -211,6 +226,7 @@ header{
          width:17%;
          font-weight: bold;
          color:rgba(250,250,250,0.8);
+         transition: all 1s;
       }
       div{
          display: flex;
@@ -239,6 +255,7 @@ section.mainsection{
       color:#444;
       width: 23%;
       font-size: 90%;
+      transition: all 1s;
 
       >h2{
          padding-bottom: 20px;
@@ -280,6 +297,9 @@ section.mainsection{
       width: 60%;
       padding:30px;
       padding-bottom: 0;
+      transition: width 1s;
+
+
 
 
       h4{
@@ -323,6 +343,7 @@ section.mainsection{
    .multiselect{
       padding:30px;
       width:17%;
+      transition: all 1s;
 
       h1{
          font-size: 80%;

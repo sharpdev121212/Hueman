@@ -18,14 +18,29 @@
       <div class="left">
          <a href="#"><span>Home</span></a>
          <a href="#"><span>About</span></a>
-         <a href="#"><span>Parent Page</span></a>
+         <a href="#" style="position:relative"><span>Parent Page <i class="fa fa-caret-down" aria-hidden="true"></i></span>
+         <div class="dropdown-content">
+            <p>Microsoft</p>
+            <p>Microsoft</p>
+            <p>Microsoft</p>
+         </div>
+         </a>
       </div>
-      <div class="right">
+      <div class="right" tabindex="-1">
          <p><span>&#9906;</span></p>
+         <div class="dropdown-content">
+            <a href="#">Google</a>
+            <a href="#">Javascript</a>
+            <a href="#">link</a>
+         </div>
       </div>
    </div>
 </nav>
 <!--  End of main nav-->
+
+<div style="height:50px"></div>
+<!-- Just an empty div to give height to position fixed -->
+
 
 <header class="header">
    <div class="mainheader container">
@@ -46,6 +61,8 @@
       <div>more</div>
    </div>
 </header><!-- End of header -->
+
+
 
 <section class="mainsection">
    <div class="container card-1">

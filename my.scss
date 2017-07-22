@@ -10,12 +10,18 @@ html {
 }
 body{
    background-color: #f1f1f1;
-   user-select: none;
+
    overflow-x: hidden;
 }
+
+::selection {
+  background: #16cfc1; /* WebKit/Blink Browsers */
+}
+
 .container{
    max-width: 1400px;
    margin: 0 auto;
+
 
 
 }
@@ -159,6 +165,7 @@ nav {
 
 header{
    background-color:#454e5c;
+   user-select: none;
 
    .mainheader{
       padding-left: 50px;

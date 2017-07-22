@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+   <link href="https://fonts.googleapis.com/css?family=Crafty+Girls" rel="stylesheet">
+   <title>Wesbos Style</title>
+   <style>
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body{
+   font-family: 'Crafty Girls', cursive;
+   user-select: none;
+   cursor: default;
+
+   min-height: 100vh;
+   font-size: 30px;
+   font-weight: bold;
+   color:white;
+   display: flex;
+   flex:1;
+}
+
+
+
+div{
+   background-image: url(http://lorempixel.com/400/800);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+   flex-grow: 1;
+   flex-basis: 200px;
+   text-align: center;
+   border:1px solid grey;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+
+   transition: all 0.5s ;
+
+
+}
+
+div:nth-child(2){
+   background-image: url(http://lorempixel.com/400/800?fds);
+}
+div:nth-child(3){
+   background-image: url(http://lorempixel.com/400/800?fggds);
+}
+div:nth-child(4){
+   background-image: url(http://lorempixel.com/400/800?fuds);
+}
+div:nth-child(5){
+   background-image: url(http://lorempixel.com/400/800?ftds);
+}
+
+
+
+
+
+
+
+div h1:first-child{
+   transform: translateY(-1000px);
+   transition: transform 0.5s;
+}
+
+div h1:last-child{
+   transform: translateY(1000px);
+   transition: transform 0.5s;
+}
+
+div.open-active h1{
+   transform: translateY(0);
+}
+
+div.open{
+   flex-grow: 3;
+   font-size: 50px;
+}
+
+   </style>
+</head>
+<body>
+   <div>
+      <h1>This text is cool</h1>
+      <h1>This text is cool</h1>
+      <h1>This text is cool</h1>
+   </div>
+   <div>
+      <h1>This text is cool</h1>
+      <h1>This text is cool</h1>
+      <h1>This text is cool</h1>
+   </div>
+   <div>
+      <h1>This text is cool</h1>
+      <h1>This text is cool</h1>
+      <h1>This text is cool</h1>
+   </div>
+   <div>
+      <h1>This text is cool</h1>
+      <h1>This text is cool</h1>
+      <h1>This text is cool</h1>
+   </div>
+   <div>
+      <h1>This text is cool</h1>
+      <h1>This text is cool</h1>
+      <h1>This text is cool</h1>
+   </div>
+
+
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script>
+      $('div').on('click',function(){
+         $(this).toggleClass('open');
+      });
+
+      $('div').on('transitionend', function(e){
+         if(e.originalEvent.propertyName.includes('flex')){
+            $(this).toggleClass('open-active');
+         }
+      })
+   </script>
+
+
+
+
+
+</body>
+</html>

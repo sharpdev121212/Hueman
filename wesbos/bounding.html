@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+   <title>Cool Nav</title>
+
+
+<style>
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 200%;
+  font-family: Arial;
+
+}
+body{
+   height: 200vh;
+}
+
+a{
+   color: rgba(0,0,0,0.9);
+   text-decoration: none;
+}
+
+
+.content{
+   height: 100vh;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   background: linear-gradient(to right, #aa076b, #61045f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+nav{
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+}
+
+nav ul{
+
+   width:80vw;
+   display: flex;
+   background: linear-gradient(to right, #e55d87, #5fc3e4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   color: rgba(0, 0, 0, 0.5);
+   border-radius: 2px;
+}
+
+li{
+   padding: 10px 20px;
+   position: relative;
+   cursor:pointer;
+}
+
+li:last-child{
+   margin-left: auto;
+}
+
+li::before{
+   content:"";
+   position: absolute;
+   top:calc(100% - 4px);
+   left:0%;
+   width:0%;
+   border-bottom: 4px solid transparent;
+   transition: all 0.4s;
+}
+
+
+
+
+
+li:hover::before{
+   left:0;
+   width:100%;
+   border-bottom: 4px solid #277A71;
+}
+
+.hidden{
+   padding:10px;
+   padding-top:10px;
+   position: absolute;
+   z-index: 1;
+   top:calc(100%);
+   left:0;
+   display: none;
+   opacity: 0;
+   transition: all 1s;
+
+
+
+
+}
+
+.hidden.enter{
+   display: block;
+}
+
+.hidden.enter.active{
+   opacity:1;
+   color:black;
+
+}
+
+.rect{
+   position: absolute;
+
+   background-color: rgba(255,255,255,0.9);
+   pointer-events: none;
+   transition: all 0.4s;
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   border:1px solid rgba(0,0,0,0.3);
+
+}
+
+a[tooltip]{
+   position: relative;
+}
+
+
+[tooltip]:before{
+opacity: 0;
+display: block;
+content:"";
+position: absolute;
+top:5px;
+right:-20px;
+width:0;
+height:0;
+border-top:10px solid transparent;
+border-bottom:10px solid transparent;
+border-right:10px solid rgba(20,20,20,0.5);
+transition: all 0.5s;
+}
+
+[tooltip]:after{
+   opacity:0;
+   position: absolute;
+   content:attr(href);
+   font-size: 40%;
+   top:-10px;
+   left:calc(100% + 20px);
+   background-color: rgba(20,20,20,0.5);
+   padding:20px;
+   border-radius: 10px;
+   transition:opacity 0.5s;
+}
+
+a[tooltip]:hover:after{
+   opacity:1;
+
+
+}
+
+a[tooltip]:hover:before{
+   opacity: 1;
+   }
+
+</style>
+</head>
+<body>
+   <div class="content">
+      <nav>
+         <ul>
+            <li class="lis">
+               <span>Home</span>
+               <div class="hidden">
+                  <a href="#">google</a>
+                  <a href="#">google</a>
+                  <a href="#">google</a>
+               </div>
+
+            </li>
+            <li class="lis">Link
+               <div class="hidden">
+                  <a href="#">google</a>
+                  <a href="#">google</a>
+                  <a href="#">google</a>
+                  <a href="#">google</a>
+                  <a href="#">google</a>
+               </div></li>
+               <li class="lis">Article
+                  <div class="hidden">
+                     <a href="#">Microsoft</a>
+                     <a href="#">Quite long link</a>
+                     <a href="#">google</a>
+                     <a href="#">Frooogle</a>
+                     <a href="#">google</a>
+                  </div></li>
+            <li>Desc</li>
+            <li>Job</li>
+            <li>Luft</li>
+            <li>Skata</li>
+         </ul>
+      </nav>
+   </div>
+   <div class="tooltip">
+      <a href="https//google.gr" tooltip>Google</a>
+   </div>
+
+<script>
+
+const lis = document.querySelectorAll('nav li.lis');
+
+const element = document.createElement('div');
+document.body.appendChild(element);
+element.classList.add('rect');
+
+lis.forEach(i => i.addEventListener('mouseenter', enter));
+
+lis.forEach(i=> i.addEventListener('mouseleave', leave));
+
+
+let lastItem ;
+
+function enter (){
+      this.querySelector('.hidden').classList.add('enter');
+      const coords = this.querySelector('.hidden').getBoundingClientRect();
+      console.log(coords);
+      element.style.opacity = '1';
+      element.style.width = coords.width + "px";
+      element.style.height = (coords.height -10) + "px";
+      element.style.top = (coords.top + window.scrollY +10) + "px";
+      element.style.left = coords.left + "px";
+      this.querySelector('.hidden').classList.add('active');
+
+      lastItem = this.querySelector('.hidden');
+
+}
+
+function leave(){
+      element.style.opacity = "0";
+
+      this.querySelector('.hidden').classList.remove('active','enter');
+}
+
+
+
+</script>
+</body>
+</html>

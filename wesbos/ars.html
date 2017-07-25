@@ -16,17 +16,43 @@
       <ul>
          <li class="logo"><span class="ars">ars</span><span class="technica">technica</span></li>
          <li class="search">⚲</li>
-         <li>biz &amp; it</li>
-         <li>tech</li>
-         <li>science</li>
-         <li>policy</li>
-         <li>cars</li>
-         <li>gaming &amp; culture</li>
-         <li>forums</li>
+         <li class="links">biz &amp; it</li>
+         <li class="links">tech</li>
+         <li class="links">science</li>
+         <li class="links">policy</li>
+         <li class="links">cars</li>
+         <li class="links">gaming &amp; culture</li>
+         <li class="links">forums</li>
          <li class="hamburger">&#9776;</li>
-         <li class="signin">sign in <i class="fa fa-chevron-down" aria-hidden="true"></i></li>
+         <li class="signin links">sign in <i class="fa fa-chevron-down" aria-hidden="true"></i></li>
          <li class="flags"></li>
       </ul>
+      <div class="hamburger--open">
+         <ul>
+            <li>Navigate</li>
+            <li>Videos</li>
+            <li>Topics</li>
+            <li>Articles</li>
+         </ul>
+         <ul>
+            <li>Navigate</li>
+            <li>Videos</li>
+            <li>Topics</li>
+            <li>Articles</li>
+         </ul>
+         <ul>
+            <li>Navigate</li>
+            <li>Videos</li>
+            <li>Topics</li>
+            <li>Articles</li>
+         </ul>
+         <ul>
+            <li>Navigate</li>
+            <li>Videos</li>
+            <li>Topics</li>
+            <li>Articles</li>
+         </ul>
+      </div>
    </nav><!-- end of navigation-->
 
    <section class="majorgrid">
@@ -200,5 +226,29 @@
       </div>
    </section>
 </div>
+<script>
+   const hamburger = document.querySelector('.hamburger');
+   const hamburgerDiv = document.querySelector('.hamburger--open');
+
+   hamburger.addEventListener('click', function(){
+      hamburgerDiv.classList.toggle('active');
+   })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

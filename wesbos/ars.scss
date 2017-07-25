@@ -21,12 +21,16 @@ body{
 }
 
 nav.topnav{
+   position: relative;
+   z-index: 100;
+   user-select: none;
    ul{
       display: flex;
       background-color: #030303;
       color:#01cd74;
       text-transform: uppercase;
       margin-bottom: 10px;
+
 
 
       li{
@@ -73,6 +77,29 @@ nav.topnav{
          margin-right: 10px;
          background-image: url(https://lipis.github.io/flag-icon-css/flags/4x3/um.svg);
          background-size: 100% 100%;
+         background-repeat: no-repeat;
+         background-position: center;
+      }
+
+      li.links{
+         position: relative;
+         &:after{
+            position: absolute;
+            display: block;
+            content: "";
+            bottom:0;
+            left:50%;
+            width: 0;
+            height: 0;
+            background-color: #ff4e00;
+            transition: all 0.3s;
+         }
+         &:hover:after{
+            left:0;
+            height:5px;
+            width:100%;
+
+         }
       }
    }
 }
@@ -357,6 +384,29 @@ nav.topnav{
    }
 }
 
+nav .hamburger--open{
+   display: none;
+}
+
+nav .hamburger--open.active{
+
+   position: absolute;
+   top:100%;
+   width:100%;
+   display: flex;
+   background-color: #030303;
+   justify-content: space-between;
+   border-top: 4px solid #ff4e00;
+   >ul{
+      display: block;
+   }
+}
+
+
+
+
+
+
 @media only screen and (max-width: 800px) {
 
    nav{
@@ -382,5 +432,16 @@ nav.topnav{
       img{
          display: none;
       }
+   }
+}
+
+@media only screen and (max-width: 400px){
+   body .smallbox{
+      width:100% !important;
+
+   }
+   .container{
+      padding:5px;
+      padding-top: 0px;
    }
 }

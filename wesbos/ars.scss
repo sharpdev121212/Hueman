@@ -1,0 +1,386 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+   background-color: #5f6265;
+   font-family: "Roboto";
+   cursor: default;
+}
+
+.container{
+   max-width: 1200px;
+   margin: 0 auto;
+   padding:30px;
+   min-height: 200vh;
+   background-color: #f0f1f2;
+   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+nav.topnav{
+   ul{
+      display: flex;
+      background-color: #030303;
+      color:#01cd74;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+
+
+      li{
+         padding:13px 10px;
+         cursor: pointer;
+         font-size: 14px;
+      }
+      li.logo{
+
+         color:#ff4e00;
+         font-weight: 500;
+         //font-size: 18px;
+      }
+
+
+      li.search{
+         display: inline-block;
+         position: relative;
+         transform: rotate(-35deg) scale(2.3);
+
+         color: #fff;
+      }
+
+      li.hamburger{
+         display: inline-block;
+         position: relative;
+         font-weight: bold;
+         color:#fff;
+         transform: scale(1.5);
+      }
+
+      li.signin{
+         color:#ff4e00;
+
+         i{
+            color:#fff;
+            font-size: 80%;
+            position: relative;
+            top:-2px;
+         }
+      }
+      li.flags{
+         margin-left:   auto;
+         margin-right: 10px;
+         background-image: url(https://lipis.github.io/flag-icon-css/flags/4x3/um.svg);
+         background-size: 100% 100%;
+      }
+   }
+}
+
+//End of navigation
+//
+//Start of the grid section
+
+
+.majorgrid{
+   .smallbox{
+      width:32%;
+      margin-bottom: -40px;
+      position: relative;
+      //border:2px solid pink;
+      overflow: hidden;
+
+
+      &:hover .overlay h4{
+         color: #ff4e00
+      }
+
+
+      img{
+         width:100%;
+         filter:brightness(0.8);
+         transition: all 0.5s;
+
+         &:hover{
+            transform: scale(1.05);
+            filter:brightness(1);
+         }
+      }
+
+      &>h3{
+         position: absolute;
+         top:17px;
+         left:0;
+         display: inline-block;
+         color:#000;
+         background-color: #fff;
+         padding:10px;
+         text-transform: uppercase;
+         pointer-events: none;
+         z-index: 1;
+      }
+
+      .overlay{
+         width:90%;
+         margin:0 auto;
+         padding:10px;
+         background-color: #fff;
+         color:rgba(0,0,0,0.5);
+         position: relative;
+         top:-20px;
+         z-index: 10;
+
+
+         h4{
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 1.3;
+            margin-bottom: 7px;
+            transition: all 0.3s;
+
+         }
+         p{
+            font-size: 14px;
+            color:rgba(0,0,0,0.6);
+            line-height: 1.4;
+            margin-bottom: 10px;
+         }
+
+         aside{
+            font-size: 12px;
+            color:#ff4e00;
+            text-transform: uppercase;
+
+            span{
+               color:darken(#ff4e00,10%);
+            }
+
+         }
+
+
+      }
+
+      .dummy{
+
+         height: 35px;
+         background-color: #ccc;
+         position: relative;
+         top:-40px;
+
+
+      }
+   }
+}
+
+.majorgrid .largebox{
+   position: relative;
+   width:66%;
+   //height: 340px;
+   background-image:url(http://lorempixel.com/800/400);
+   background-position: center;
+   background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+
+
+   h1.absolute{
+      position: absolute;
+      display: inline-block;
+      top:17px;
+      left:0;
+      color:black;
+      padding:10px;
+      background-color: #fff;
+
+
+      span{
+         color:#ff4e00;
+         display: inline-block;
+         transform: scale(1.5);
+      }
+   }
+
+   &:hover>div>h1{
+      color:#ff4e00;
+   }
+
+   >div{
+      width:95%;
+      padding:15px;
+      margin-bottom: 10px;
+      background-color: rgba(0,0,0,0.5);
+
+      h1{
+         color:white;
+         font-size: 25px;
+         margin-bottom: 10px;
+         line-height: 1.2;
+         transition: all 0.3s;
+      }
+      p{
+         color:#01cd74;
+         margin-bottom: 10px;
+      }
+      aside{
+         font-size: 12px;
+         color:#ff4e00;
+         text-transform: uppercase;
+
+         span{
+            color:darken(#ff4e00,10%);
+         }
+
+      }
+   }
+
+}
+
+.majorgrid{
+   display: flex;
+   justify-content: space-between;
+   align-content: flex-start;
+   flex-wrap: wrap;
+
+   .box{
+      margin-top: 20px;
+
+      &:last-child{
+         align-self: stretch;
+      }
+   }
+
+
+
+}
+
+//End of the grid //
+
+.stories{
+   padding-top: 25px;
+   width:100%;
+
+   >.fixer>h2{
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 300;
+      padding-bottom: 20px;
+
+      &::after{
+         content:" >";
+         color:#01cd74;
+      }
+   }
+}
+
+.stories-left{
+   display: flex;
+   margin-top: 20px;
+   width:100%;
+
+   img{
+      margin-right: 10px;
+   }
+
+   h4{
+      font-size: 22px;
+      font-weight: bold;
+      margin: 10px 0;
+   }
+   p{
+      color:rgba(0,0,0,0.5);
+      font-weight:500;
+      font-size: 14px;
+      margin-bottom: 10px;
+   }
+
+   aside{
+      font-size: 12px;
+      color:#ff4e00;
+      text-transform: uppercase;
+
+      span{
+         color:darken(#ff4e00,10%);
+      }
+
+   }
+
+   >div{
+      border-bottom: 1px dotted #ccc;
+   }
+}
+
+.right-fixer>h2{
+
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 300;
+      padding-bottom: 20px;
+
+      &::after{
+         content:" >";
+         color:#01cd74;
+      }
+
+}
+
+.stories-right{
+   width: 100%;
+
+   h5{
+      padding:10px 0;
+      font-size: 17px;
+      font-weight: normal;
+      line-height: 1.2;
+      border-bottom: 1px solid #ccc;
+
+   }
+   ul{
+      display: flex;
+      justify-content: space-around;
+      font-size: 26px;
+      padding:10px 0;
+      color:skyblue;
+   }
+}
+
+.stories{
+   display: flex;
+   justify-content: space-between;
+
+   .fixer{
+      width:72%;
+   }
+
+   .right-fixer{
+      width:25%;
+   }
+}
+
+@media only screen and (max-width: 800px) {
+
+   nav{
+      display: none !important;
+   }
+
+    .largebox{
+      order:-1;
+      width:100% !important;
+      height:300px !important;
+
+   }
+   .smallbox{
+      width:48% !important;
+   }
+   .stories{
+      display: block;
+
+      &>*{
+         width:100% !important;
+      }
+
+      img{
+         display: none;
+      }
+   }
+}

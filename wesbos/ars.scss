@@ -116,10 +116,12 @@ nav.topnav{
       position: relative;
       //border:2px solid pink;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
 
 
       &:hover .overlay h4{
-         color: #ff4e00
+         color: #ff4e00;
       }
 
 
@@ -156,6 +158,7 @@ nav.topnav{
          position: relative;
          top:-20px;
          z-index: 10;
+         flex:1;
          //box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
 

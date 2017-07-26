@@ -156,6 +156,7 @@ nav.topnav{
          position: relative;
          top:-20px;
          z-index: 10;
+         //box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
 
          h4{
@@ -196,6 +197,12 @@ nav.topnav{
 
 
       }
+
+      &:not(:first-child){
+         >h3{
+            display:none;
+         }
+      }
    }
 }
 
@@ -203,7 +210,7 @@ nav.topnav{
    position: relative;
    width:66%;
    //height: 340px;
-   background-image:url(http://lorempixel.com/800/400);
+   background-image:url(http://loremflickr.com/800/400);
    background-position: center;
    background-size: cover;
    display: flex;

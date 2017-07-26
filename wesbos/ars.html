@@ -226,16 +226,47 @@
       </div>
    </section>
 </div>
+
+<div class="signin-drop">
+   <ul>
+      <li>Home</li>
+      <li>Pages</li>
+      <li>Network</li>
+      <li>Sponsors</li>
+   </ul>
+</div>
+
+
 <script>
    const hamburger = document.querySelector('.hamburger');
    const hamburgerDiv = document.querySelector('.hamburger--open');
+   const singin= document.querySelector('.signin');
+   const singinDiv = document.querySelector('.signin-drop');
 
    hamburger.addEventListener('click', function(){
       this.classList.toggle('rotate90');
       hamburgerDiv.classList.toggle('enter');
-      setTimeout(function(){ hamburgerDiv.classList.toggle('active'); }, 1);
+      setTimeout(function(){ hamburgerDiv.classList.toggle('active'); }, 100);
 
    });
+
+   singin.addEventListener('click', function(){
+      singinDiv.classList.toggle('enter');
+      setTimeout(function(){
+         singinDiv.classList.toggle('active');
+         document.body.classList.add('disable-scroll');
+      }, 50);
+
+   });
+
+   singinDiv.addEventListener('click', function(e){
+      if(e.target.tagName === "DIV"){
+         this.classList.remove('enter','active');
+         document.body.classList.remove('disable-scroll');
+
+      }
+
+   })
 </script>
 
 

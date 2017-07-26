@@ -59,7 +59,8 @@ nav.topnav{
          position: relative;
          font-weight: bold;
          color:#fff;
-         transform: scale(1.5);
+         transform: scale(1.5) rotate(0);
+         transition: transform 0.5s;
       }
 
       li.signin{
@@ -399,11 +400,19 @@ nav.topnav{
    }
 }
 
+//rotate hamburger//
+
+.rotate90{
+   transform: scale(1.5) rotate(90deg) !important;
+}
+//End rotate hamburger
+
 nav .hamburger--open{
    display: none;
+   transition: all 0.3s;
 }
 
-nav .hamburger--open.active{
+nav .hamburger--open.enter{
 
    position: absolute;
    top:100%;
@@ -415,6 +424,12 @@ nav .hamburger--open.active{
    >ul{
       display: block;
    }
+   -webkit-transform: perspective(400) rotate3d(1, 0, 0, -90deg);
+    -webkit-transform-origin: 50% 0;
+
+   &.active{
+      -webkit-transform: perspective(400) rotate3d(1, 0, 0, 0deg) ;
+   }
 }
 
 
@@ -422,7 +437,7 @@ nav .hamburger--open.active{
 
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
 
    nav{
       display: none !important;
@@ -456,7 +471,7 @@ nav .hamburger--open.active{
 
    }
    .container{
-      padding:5px 8px;
+      padding:5px 10px;
       padding-top: 0px;
    }
 }

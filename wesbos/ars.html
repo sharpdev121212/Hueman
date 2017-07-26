@@ -231,8 +231,11 @@
    const hamburgerDiv = document.querySelector('.hamburger--open');
 
    hamburger.addEventListener('click', function(){
-      hamburgerDiv.classList.toggle('active');
-   })
+      this.classList.toggle('rotate90');
+      hamburgerDiv.classList.toggle('enter');
+      setTimeout(function(){ hamburgerDiv.classList.toggle('active'); }, 1);
+
+   });
 </script>
 
 

@@ -27,7 +27,7 @@ nav.topnav{
    -webkit-user-select: none;  /* Chrome all / Safari all */
    -moz-user-select: none;     /* Firefox all */
    -ms-user-select: none;      /* IE 10+ */
-   user-select: none;          /* Likely future */    
+   user-select: none;          /* Likely future */
    ul{
       display: flex;
       background-color: #030303;
@@ -458,6 +458,7 @@ nav .hamburger--open.enter{
       margin-top: 10px;
       cursor:pointer;
       position: relative;
+      text-align: center;
 
       &::before{
          position: absolute;
